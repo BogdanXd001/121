@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepo Power Coin</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.5.0/dist/web3.min.js"></script>
+
+     <style>
+     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 18px;
+    font-family: 'Fredoka One', cursive;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* General section styling */
+.section {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* First section */
+.section1 {
+    background-image: url('background1.png');
+    position: relative;
+}
+
+.Gif1 img {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    max-width: 500px;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Text shadow effect */
+.PoweredBy {
+    font-size: 25px;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 white, -2px 2px 0 white, 2px -2px 0 white;
+}
+
+/* Second section */
+.section2 {
+    background-image: url('background2.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Available {
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 white, -2px 2px 0 white, 2px -2px 0 white;
+}
+
+.Available img {
+    width: 250px;
+    height: auto;
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+}
+
+.Available:hover img {
+    transform: scale(1.05);
+}
+
+/* Third section */
+.section3 {
+    background-image: url('background3.png');
+    padding-bottom: 100px;
+}
+
+.BioPePo h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 60px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.bio-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 150px;
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.biop {
+    flex: 1;
+    text-align: left;
+    color: black;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 white, -2px 2px 0 white, 2px -2px 0 white;
+}
+
+
+.bio-image {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+    margin-right: 50px;
+}
+
+.bio-image:hover {
+    transform: rotate(3deg);
+}
+
+/* Slider styling */
+.slider {
+    position: relative;
+    max-width: 50%;
+    flex: 1;
+    overflow: hidden;
+    margin-left: 150px;
+    z-index: 3;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Fourth section */
+.section4 {
+    background-image: url('background4.png');
+    height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #00a1e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #a1e0b0;
+}
+
+.nav-links-footer {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.nav-links-footer li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.nav-links-footer li a:hover {
+    color: #a1e0b0;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.social-icons-footer {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+    justify-content: center;
+    margin-top: 400px;
+    position: relative;
+    z-index: 1000;
+}
+
+.social-icons-footer img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+    border: 4px solid white; /* Adds a white border */
+    border-radius: 50%; /* Optional: adjust or remove for different corner rounding */
+}
+
+.social-icons-footer img:hover {
+    transform: scale(1.1);
+}
+
+.section7 {
+    z-index: -100;
+}
+
+/* Presale container styling */
+.presale-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #dc602b;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    position: relative;
+    left: 40%;
+    transform: translateX(-40%);
+    z-index: 2;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.presale-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+#token-text { font-size: 18px; font-weight: bold; color: #000; margin-top: 10px; text-shadow: 1px 1px #fff; }
+
+.cartoon-input { width: 100%; padding: 10px; font-size: 16px; margin: 10px 0; border: 2px solid #000; border-radius: 15px; background-color: #ffefcc; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); text-shadow: 1px 1px #fff;}
+
+.cartoon-input::placeholder { color: #999; font-style: italic; } .cartoon-input:focus { border-color: #ff9900; outline: none; }
+
+.cartoon-input::placeholder { color: #999; font-style: italic; }
+
+.cartoon-button { font-size: 18px; padding: 15px; width: 100%; border-radius: 20px; margin-top: 10px; border: none; cursor: pointer; background: linear-gradient(to right, #ffcc00, #ff9900); color: #000; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); transition: background 0.3s, transform 0.3s; }
+
+/* Timer styling */
+.timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.time-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.time-section {
+    border: 2px solid #00a1e0;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    text-align: center;
+    width: 50px;
+}
+
+.time {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Flex container styling */
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.imgg1 {
+    flex: 1;
+    max-width: 50%;
+    z-index: 3;
+}
+
+/* Fifth section */
+.section5 {
+    background-image: url('background5.png');
+    z-index: -2;
+}
+
+@keyframes backgroundColorChange {
+            0% { background-color: #f2f3f4; }
+            100% { background-color: #fff7f0; }
+        }
+        .card {
+            background-color: #79e3ba;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            padding: 20px;
+            width: 320px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            background-color: #ecc7e2;
+            border-radius: 10px;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            margin: 0 -20px 10px -20px;
+            font-size: 1.5em;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .card p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .progress-bar {
+            background-color: #2ecc71;
+            border-radius: 10px;
+            height: 20px;
+            width: 100%;
+        }
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            background-color: #27ae60;
+            border-radius: 10px;
+        }
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .center-image img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .Roadmap {
+    text-align: center;
+    margin-top: 600px;
+    z-index: 10;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 white, -2px 2px 0 white, 2px -2px 0 white;
+}
+
+.mobile-image {
+    display: none;
+}
+
+.Roadmap .rdimages {
+    display: flex;
+    justify-content: center;  /* Centers the images horizontally */
+    align-items: center;      /* Aligns the images vertically */
+    gap: 0px;                /* Adds space between the images */
+    flex-wrap: nowrap;        /* Ensures the images stay in a single line */
+    margin-top: 40px;
+    z-index: 10;
+}
+
+.image-large {
+    width: 1000px;            /* Adjust this value to make the image larger */
+    z-index: 10;
+    margin-left: 0;
+    display: block;          /* Reset margin if it was previously set */
+}
+
+.image-small {
+    width: 500px;            /* Adjust this value to make the image smaller */
+    margin-left: 90px;       /* Add margin to the left of the smaller image */
+}
+
+.faq-container {
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        margin-top: 800px;
+        float: right;
+        color: #f2f3f4;
+    }
+    
+    .faq-item {
+        background: #ff6f61; /* Orange background */
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .faq-item:hover {
+        transform: scale(1.05);
+    }
+    
+    .footer h3 {
+        color: #ffffff;
+        text-align: center;
+    }
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .card-img img {
+        width: 400px;
+        height: auto;
+        max-width: 500px;
+        margin-top: 50px;
+    }
+
+    .faq-text {
+        flex-grow: 1;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+    
+    .faq-plus {
+        background: #800000; /* Maroon background */
+        color: #ffffff;
+        font-size: 1.5em;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+    
+    .faq-answer {
+        display: none;
+        background: #fff; /* White background for answer */
+        color: #000; /* Black text for answer */
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .container { 
+        grid-template-columns: 1fr; /* Stack cards vertically */ 
+    } 
+    
+    .card { 
+        width: 90%; /* Wider cards */ 
+        height: 80%;
+        margin: 10px auto; /* Center cards with margin adjustments */ 
+        padding: 15px; /* Less padding for smaller height */ 
+    } 
+    
+    .card h2 { 
+        font-size: 1.2em; /* Slightly smaller font size */ 
+        padding: 10px; /* Less padding for header */ 
+    } 
+        
+        .card p { 
+            font-size: 1em; /* Slightly smaller font size for paragraphs */ 
+        } 
+        
+        .progress-bar { 
+            height: 15px; /* Smaller progress bar height */ 
+        }
+    
+    .faq-container {
+        width: 90%;
+        max-width: 600px;
+        padding: 20px;
+        margin-right: 0px;
+        margin-top: 1400px;
+        float: right;
+        color: #f2f3f4;
+    }
+
+    .faq-container h1 {
+        text-align: center;
+    }
+    
+        .presale-container {
+        width: 90%; /* Responsive width */
+        max-width: none; /* Remove max-width to let it use full width on mobile */
+        left: auto; /* Reset left positioning */
+        transform: none; /* Remove translation */
+        margin: 20px auto; /* Center it with margin adjustments */
+        padding: 15px; /* Adjust padding for mobile */
+    }
+    .mobile-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tokenomics {
+        margin-top: 400px;
+    }
+
+    .tokenomics h3 {
+        font-size: 17px;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: #00a1e0;
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    .social-icons {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .presale-container {
+        width: 90%; /* More responsive width on mobile */
+        padding: 15px;
+    }
+    .timer {
+        flex-direction: column; /* Stack the time sections vertically */
+        gap: 20px; /* Smaller gap for mobile */
+    }
+
+    .time-section {
+        width: 60px; /* Adjusted width for mobile */
+        padding: 10px; /* Adjusted padding */
+    }
+
+    .time {
+        font-size: 24px; /* Smaller font for numbers on mobile */
+    }
+
+    .label {
+        font-size: 12px; /* Adjusted label size for mobile */
+        margin-top: 3px;
+    }
+
+    .section2 {
+        height: auto;  /* Allow section to adjust height on smaller screens */
+   
+    }
+    .imgg1{
+        display: none;
+    }
+    .bio-content {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items:center; /* Center the items */
+        text-align: justify; /* Center-align the text */
+    }
+
+    .biop {
+        margin-top: 20px; /* Center text on mobile */
+        text-align: center;
+        width: 80%;
+        margin-right: 40px;
+    }
+
+    .bio-image {
+        margin-left: 50px;
+        margin-top: -150px;
+        width: 270px; /* Responsive width for mobile */
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column; /* Ensure vertical stacking */
+    }
+
+    .Gif1 img {
+        position: static; /* Reset positioning */
+        max-width: 100%; /* Ensure image scales down */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image */
+    }
+
+
+
+      .slider {
+        width: 90%; /* Increase the width for a larger slider */
+        margin: 0 auto; /* Center the slider */
+        min-width: 100%;
+        
+    }  
+      .flex-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */  
+    }
+
+    .Roadmap {
+        position: relative;
+    
+        font-size: 30px;
+    }
+
+    .rdimages {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .image-large {
+        display: none;
+    }
+
+    .mobile-image {
+        display: block;
+        width: 100%;
+        order: 1;
+    }
+
+    .image-small {
+        order: 2;
+    }
+
+    .card-carousel {
+        display: flex;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Snap cards into place */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+        width: 80%;
+        margin-left: 80px;
+        gap: 100px;
+    }
+
+    .card-1 {
+        flex: 0 0 80%; /* Show one card at a time with some space */
+        scroll-snap-align: start; /* Snap each card to the start of the container */
+        margin-right: 0px; /* Space between cards */
+    }
+
+    /* Optional: Hide scrollbar for a cleaner look */
+    .card-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .footer {
+        margin-top: 500px;
+    }
+    
+    .nav-links-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer h3 {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+
+}
+
+
+@media(max-width:1200px)
+{
+.section {
+    min-height: auto;
+    }
+.section1 {
+    padding-bottom: 100px;
+}        
+
+.section2, .section3
+{
+    padding: 100px 0;
+}
+
+
+.Available {
+    margin-top: 100px;
+}
+
+.BioPePo h1 {
+    margin-top: 100px;
+}
+
+.card {
+    margin: 15px;
+    width: 260px;
+}
+
+.bio-content {
+    gap: 50px;
+}
+
+.faq-container {
+    margin-top: 50px;
+}
+
+.tokenomics {
+    margin-top: 70px;
+}
+}
+
+@media(max-width:1024px)
+{
+ .container {
+    gap: 0;
+         grid-template-columns: repeat(2, 1fr);   
+}   
+
+    .card {
+        margin: 3%;
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+@media(max-width:768px)
+{
+    .BioPePo h1 {
+        margin-top: 0;
+    }
+
+.bio-content {
+        gap: 0;
+        margin: 0;
+        display: block;
+        text-align: center;
+    }
+
+.biop {
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .bio-image {
+        width: 450px;
+        margin: 50px auto 0;
+    }
+
+    .Roadmap {
+        position: relative;
+        top: auto;
+        font-size: 30px;
+    }
+
+    .section4 {
+    height: auto;
+}
+}
+
+@media(max-width:767px)
+{
+    .container {
+        gap: 0;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+.Roadmap {
+    margin-top: 0;
+}
+
+    .bio-image {
+        width: auto;
+        margin: 50px auto 0;
+        max-width: 90%;
+    }
+
+.section8 {
+    height: auto;
+}
+
+    .footer {
+        margin-top: 50px;
+    }
+.social-icons-footer {
+    margin-top: 0px;
+}
+
+.card-img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+}
+        </style>
+</head>
+<body>
+    <div class="section section1">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="pepelogo.png" alt="Popo Logo">
+            <h3>Pepo</h3>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#PePoBio">Who Is Pepo?</a></li> 
+            <li><a href="#">Tokenomics</a></li>
+            <li><a href="#">Roadmap</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><img src="x-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="telegram-icon.png" alt="Telegram"></a>
+            <a href="#"><img src="InstagramIcon.png" alt="Instagram"></a>
+        </div>
+    </nav>
+    <div class="flex-container">
+    <div class="Gif1">
+        <img src="pozamobil.png" alt="Animated GIF">
+    </div>
+    <div class="presale-container">
+            <h3 class="presale-title">$PEPO Token</h3>
+            <div class="timer" id="countdown-timer">
+                <div class="time-group">
+                    <div class="time-section">
+                        <span class="time" id="days">00</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="time-section">
+                        <span class="time" id="hours">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                </div>
+                <div class="time-group">
+                    <div class="time-section">
+                        <span class="time" id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="time-section">
+                        <span class="time" id="seconds">00</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+            <div class="currency-selection">
+                <label for="currency">Choose a cryptocurrency:</label>
+                <select id="currency" class="dropdown">
+                    <option value="bnb">BNB</option>
+                    <option value="usdt">USDT</option>
+                    <option value="eth">ETH</option>
+                </select>
+            </div>
+            <input type="number" id="usdt-amount" placeholder="Enter amount in USD" min="0" class="cartoon-input"/> <input type="text" class="conversion-display cartoon-input" id="token-amount" placeholder="Equivalent tokens" disabled /> <div id="token-text"></div> <button id="connect-wallet" class="cartoon-button">Connect Wallet</button> <button id="buy-tokens" class="cartoon-button" style="display: none;">Buy Tokens</button>
+    </div>    
+    </div>
+    </div>
+    <div class="section section2" alt="PoweredByCont">
+       <div class="Available">
+        <h1><b>AVALIABLE ON</b></h1>
+        <div class="card-carousel">
+            <img class="card-1" src="MEXC.png">
+            <img class="card-1" src="Raydium.png">
+            <img class="card-1" src="Panckake.png">
+            <script>
+           // Select the carousel container
+const carousel = document.querySelector('.card-carousel');
+
+// Variables for touch/mouse drag
+let isDown = false;
+let startX;
+let scrollLeft;
+
+carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    carousel.classList.add('active');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 3; // Scroll-fast factor
+    carousel.scrollLeft = scrollLeft - walk;
+});
+
+            </script>
+        </div>
+        </div>
+       
+        <div class="PoweredBy">
+            <h1>POWERED BY</h1>
+            <img src="" alt="PinkSale" >
+        </div>
+    </div>
+    <div class="section section3">
+        <div class="BioPePo" id="PePoBio">
+            <h1>Who is PEPO?</h1>
+            <div class="bio-content">
+                <p class="biop">Pepo: From Launch to Legend" chronicles Pepo's journey from digital debut to meme icon. With secure tokens, a lively community, and savvy marketing strategies, Pepo aspires to outshine Pepe and conquer the meme landscape.</p>
+                <img src="BOX1.png" alt="Pepo Image" class="bio-image">
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    <div class="section section4">
+        <div class="tokenomics">
+            <h1>TOKENOMICS</h1>
+            <h3>The $PEPO has a total fixed total supply capped at 111,111,111,111 tokens. This supply will be allocated across various segments within the Pepo ecosystem:</h3>
+        </div>
+        <div class="container">
+            <div class="card"> <h2>Presale: 25%</h2> <div class="progress-bar"><span style="width: 25%;"></span></div> <p>With big plans ahead, 25% of $PEPO is available for early supporters who decide to join Pepo’s army.</p> </div> <div class="card"> <h2>Staking: 25%</h2> <div class="progress-bar"><span style="width: 25%;"></span></div> <p>Pepo wants to encourage believers to invest and hold $PEPO while offering amazing returns. 25% of the supply has been reserved for staking.</p> </div> <div class="card"> <h2>Marketing: 25%</h2> <div class="progress-bar"><span style="width: 25%;"></span></div> <p>Pepo understands the importance of being known, so 25% of the $PEPO supply will be going to marketing, ensuring Pepo’s Army keeps growing.</p> </div> <div class="card"> <h2>Rewards: 15%</h2> <div class="progress-bar"><span style="width: 15%;"></span></div> <p>As a token of appreciation and gratitude to all the members, 15% will be used for rewards and community airdrops.</p> </div> <div class="card"> <h2>Liquidity: 10%</h2> <div class="progress-bar"><span style="width: 10%;"></span></div> <p>To get $PEPO to as many places as possible, Pepo has reserved 10% of the supply for CEX and DEX listings.</p> </div> <div class="card-img"><img src="tokenomics.png"></div>
+        </div>
+    </div>
+    <div class="section section5">
+        <div class="Roadmap">
+            <h1>ROADMAP</h1>
+            <div class="rdimages">
+            <!-- <img src="Artboa1.png" alt="Image 1" class="image-small"> -->
+            <img src="Artboard 1.png" class="mobile-image">
+            <img src="Untitled-2.png" alt="Image 2" class="image-large">
+            </div>
+        </div>
+    </div>
+    <div class=" section section6">
+            <div class="faq-container">
+                <h1>FAQ</h1>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-text">WHO IS PEPO?</span>
+                        <span class="faq-plus">+</span>
+                    </div>
+                    <div class="faq-answer">Pepo, a green poison dart frog, seeks vengeance against Pepe for the destruction of their shared homeland, the motherground. Once a tribal warrior, Pepo's resolve is fueled by Pepe's abandonment of their tribe in the face of peril. Left with nothing but a burning desire for retribution, Pepo retreats into exile, determined to orchestrate Pepe's downfall and rallying allies to his cause.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-text">WHY BUY $PEPO?</span>
+                        <span class="faq-plus">+</span>
+                    </div>
+                    <div class="faq-answer">If you missed Pepe, or you’d like to be a part of something legendary that may bring you huge returns. Pepo is a better version of his cousin Pepe, emerging from many struggles and hardships, yet determined to make things right for his supporters and the motherground. Pepo is here with the sole intention of taking over Pepe as the biggest frog coin, and to perhaps go even further with the backing of a loyal army.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-text">HOW TO BRIDGE $PEPO?</span>
+                        <span class="faq-plus">+</span>
+                    </div>
+                    <div class="faq-answer">You can bridge $PEPO by using the official bridge tool on our website, following the step-by-step guide.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-text">HOW DO I JOIN THE PEPO ARMY?</span>
+                        <span class="faq-plus">+</span>
+                    </div>
+                    <div class="faq-answer">It's very simple! Join our social media to make new friends, have fun and take over the meme world with Pepo!</div>
+                </div>
+            </div>
+            <script>document.addEventListener("DOMContentLoaded", function () {
+                const faqItems = document.querySelectorAll(".faq-item");
+            
+                faqItems.forEach(item => {
+                    item.addEventListener("click", function () {
+                        const answer = this.querySelector(".faq-answer");
+                        const isVisible = answer.style.display === "block";
+                        faqItems.forEach(i => i.querySelector(".faq-answer").style.display = "none"); // Hide all answers
+                        answer.style.display = isVisible ? "none" : "block"; // Toggle current answer
+                        this.querySelector(".faq-plus").textContent = isVisible ? "+" : "–"; // Toggle plus/minus sign
+                    });
+                });
+            });
+            </script>
+    </div>
+    <div class="section section7">
+    </div>
+    <div class="section section8">
+        <div class="footer">
+            <footer>
+                <div class="social-icons-footer">
+                    <a href="#"><img src="x-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="telegram-icon.png" alt="Telegram"></a>
+                    <a href="#"><img src="InstagramIcon.png" alt="Instagram"></a>
+                </div>
+                <ul class="nav-links-footer" id="nav-links">
+                    <li><a href="#PePoBio">Who Is Pepo?</a></li> 
+                    <li><a href="#">Tokenomics</a></li>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+                <h3>Pepo The Frog © 2024. All rights reserved.</h3>
+            </footer>
+        </div>
+    </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
